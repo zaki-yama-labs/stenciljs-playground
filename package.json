@@ -1,5 +1,5 @@
 {
-  "name": "stenciljs-playground",
+  "name": "@zaki-yama/stenciljs-playground",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
@@ -9,6 +9,9 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "unpkg": "dist/stenciljs-playground/stenciljs-playground.js",
   "files": [
     "dist/",
