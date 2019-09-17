@@ -22,6 +22,7 @@ export namespace Components {
     * The middle name
     */
     'middle': string;
+    'setText': (first: string, middle: string, last: string) => Promise<void>;
   }
 }
 

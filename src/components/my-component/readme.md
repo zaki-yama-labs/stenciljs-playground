@@ -14,6 +14,19 @@
 | `middle` | `middle`  | The middle name | `string` | `undefined` |
 
 
+## Methods
+
+### `setText(first: string, middle: string, last: string) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
