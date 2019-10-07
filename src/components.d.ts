@@ -25,6 +25,7 @@ export namespace Components {
     'middle': string;
     'setText': (first: string, middle: string, last: string) => Promise<void>;
   }
+  interface PropAttribute {}
   interface PropReflect {
     'message': string;
   }
@@ -45,6 +46,12 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLPropAttributeElement extends Components.PropAttribute, HTMLStencilElement {}
+  var HTMLPropAttributeElement: {
+    prototype: HTMLPropAttributeElement;
+    new (): HTMLPropAttributeElement;
+  };
+
   interface HTMLPropReflectElement extends Components.PropReflect, HTMLStencilElement {}
   var HTMLPropReflectElement: {
     prototype: HTMLPropReflectElement;
@@ -53,6 +60,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'custom-clock': HTMLCustomClockElement;
     'my-component': HTMLMyComponentElement;
+    'prop-attribute': HTMLPropAttributeElement;
     'prop-reflect': HTMLPropReflectElement;
   }
 }
@@ -73,6 +81,7 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface PropAttribute extends JSXBase.HTMLAttributes<HTMLPropAttributeElement> {}
   interface PropReflect extends JSXBase.HTMLAttributes<HTMLPropReflectElement> {
     'message'?: string;
   }
@@ -80,6 +89,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'custom-clock': CustomClock;
     'my-component': MyComponent;
+    'prop-attribute': PropAttribute;
     'prop-reflect': PropReflect;
   }
 }
