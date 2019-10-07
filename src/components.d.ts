@@ -9,6 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface CustomClock {}
   interface MyComponent {
     /**
     * The first name
@@ -29,17 +30,25 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLCustomClockElement extends Components.CustomClock, HTMLStencilElement {}
+  var HTMLCustomClockElement: {
+    prototype: HTMLCustomClockElement;
+    new (): HTMLCustomClockElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'custom-clock': HTMLCustomClockElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface CustomClock extends JSXBase.HTMLAttributes<HTMLCustomClockElement> {}
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
@@ -56,6 +65,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'custom-clock': CustomClock;
     'my-component': MyComponent;
   }
 }
